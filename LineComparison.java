@@ -29,7 +29,7 @@ public class LineComparison
 	/**
 	 * Calculating length of an two line.
 	 * using the Cartesian formula.
-	 * Comparing two lines length using equal() method.
+	 * Comparing two lines length using compare() method.
 	 */
 	private void lineLength()
 	{
@@ -56,13 +56,18 @@ public class LineComparison
 		System.out.println("The length of a line is:" + secondLineLength);
 		Float firstLineLengthObj1 = firstLineLength;
 		Float secondLineLengthObj2 = secondLineLength;
-		if (firstLineLengthObj1.equals(secondLineLengthObj2))
+		int val = Float.compare(firstLineLengthObj1, secondLineLengthObj2);
+	    if (val == 0) 
 		{
-			System.out.println("The length of both the lines are equal.");
+			System.out.println("Both the line are equal.");
+		}
+		else if (val > 0)
+		{
+			System.out.println("The first line is greater than the second line.");
 		}
 		else
 		{
-			System.out.println("The length of both the lines are different.");
+			System.out.println("The second line is greater than first line.");
 		}
 		scanner.close();
 	}
